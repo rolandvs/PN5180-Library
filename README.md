@@ -7,6 +7,9 @@ Arduino Uno / Arduino ESP-32 library for PN5180-NFC Module from NXP Semiconducto
 
 Release Notes:
 
+Version 2.3.7 - 01.09.2025
+	* ISO14443: Explicitly allow unknown manufacturer ID 0xFF, thanks to tom !
+
 Version 2.3.6 - 03.06.2025
 	*  Allow to change SPI frequency #16, thanks to @saidmoya12 !
 	

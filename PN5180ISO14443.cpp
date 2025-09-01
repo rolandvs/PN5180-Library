@@ -388,9 +388,10 @@ int8_t PN5180ISO14443::readCardSerial(uint8_t *buffer) {
 	}
 	if ((response[0] == 0xFF) && (response[1] == 0xFF))
 	  uidLength = 0;
-		
-	// first UID byte should not be 0x00 or 0xFF
-	if ((response[3] == 0x00) || (response[3] == 0xFF)) 
+	
+	// first UID byte should not be 0x00
+	// explicitly allow unknown manufacturer ID 0xFF
+	if (response[3] == 0x00)  
 		uidLength = 0;
 		
 	// check for valid uid, skip first byte (0x04)
